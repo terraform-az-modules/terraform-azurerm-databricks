@@ -1,5 +1,4 @@
 provider "azurerm" {
-  subscription_id = "1ac2caa4-336e-4daa-b8f1-0fbabe2d4b11"
   features {}
 }
 
@@ -7,7 +6,6 @@ provider "databricks" {
   azure_workspace_resource_id = module.databricks.databricks_workspace_id
 }
 
-data "azurerm_client_config" "current_client_config" {}
 ##-----------------------------------------------------------------------------
 ## Resource Group module call
 ## Resource group in which all resources will be deployed.
@@ -68,6 +66,9 @@ module "pub_subnet" {
   ]
 }
 
+# ------------------------------------------------------------------------------
+# Subnet
+# ------------------------------------------------------------------------------
 module "pvt_subnet" {
   source               = "terraform-az-modules/subnet/azure"
   version              = "1.0.0"
