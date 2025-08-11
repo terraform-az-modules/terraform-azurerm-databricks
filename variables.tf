@@ -100,7 +100,7 @@ variable "sku" {
 
 variable "network_security_group_rules_required" {
   type        = string
-  default     = "AllRules"
+  default     = "NoAzureDatabricksRules"
   description = "Specifies NSG rules required for data plane to control plane communication. Valid values: AllRules, NoAzureDatabricksRules, or NoAzureServiceRules. Required when public_network_access_enabled is false."
 }
 
@@ -118,31 +118,31 @@ variable "managed_resource_group_name" {
 
 variable "virtual_network_id" {
   type        = string
-  default     = ""
+  default     = null
   description = "ID of the Virtual Network to associate with the Databricks Workspace."
 }
 
 variable "private_subnet_name" {
   type        = string
-  default     = ""
+  default     = null
   description = "Name of the private subnet to be used by the Databricks Workspace."
 }
 
 variable "public_subnet_name" {
   type        = string
-  default     = ""
+  default     = null
   description = "Name of the public subnet to be used by the Databricks Workspace."
 }
 
 variable "public_subnet_network_security_group_association_id" {
   type        = string
-  default     = ""
+  default     = null
   description = "Resource ID of the NSG association for the public subnet."
 }
 
 variable "private_subnet_network_security_group_association_id" {
   type        = string
-  default     = ""
+  default     = null
   description = "Resource ID of the NSG association for the private subnet."
 }
 
