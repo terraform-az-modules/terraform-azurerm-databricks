@@ -1,10 +1,6 @@
 ##-----------------------------------------------------------------------------
 ## Outputs
 ##-----------------------------------------------------------------------------
-##-----------------------------------------------------------------------------
-## Module Outputs - Databricks
-##-----------------------------------------------------------------------------
-
 output "databricks_workspace_id" {
   description = "The ID of the Databricks Workspace in the Azure management plane."
   value       = module.databricks.databricks_workspace_id
