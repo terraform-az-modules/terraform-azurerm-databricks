@@ -130,6 +130,8 @@ module "private_security_group" {
 #-----------------------------------------------------------------------------
 module "databricks" {
   source                                               = "./../../"
+  name                                                 = "core"
+  environment                                          = "dev"
   resource_group_name                                  = module.resource_group.resource_group_name
   location                                             = module.resource_group.resource_group_location
   virtual_network_id                                   = module.vnet.vnet_id
