@@ -14,7 +14,6 @@ module "labels" {
   extra_tags      = var.extra_tags
 }
 
-
 resource "azurerm_databricks_workspace" "main" {
   count                                 = var.enabled ? 1 : 0
   name                                  = var.resource_position_prefix ? format("dbw-%s", local.name) : format("%s-dbw", local.name)
@@ -35,7 +34,6 @@ resource "azurerm_databricks_workspace" "main" {
     storage_account_name                                 = var.storage_account_name
   }
 }
-
 
 resource "databricks_cluster" "cluster" {
   count                   = var.enabled && var.cluster_enable == true ? 1 : 0

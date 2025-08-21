@@ -1,6 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
 
-# Terraform Azure Module Template
+# Terraform Azure DataBricks
 
 This directory contains an example usage of the **terraform-azure-databricks**. It demonstrates how to use the module with default settings or with custom configurations.
 
@@ -11,7 +11,7 @@ This directory contains an example usage of the **terraform-azure-databricks**. 
 | Name      | Version   |
 |-----------|-----------|
 | Terraform | >= 1.6.6  |
-| Azurerm   | >= 3.116.0|
+| Azurerm   | >= 4.11.0 |
 
 ---
 
