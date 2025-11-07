@@ -11,8 +11,8 @@ provider "databricks" {
 ## Resource group in which all resources will be deployed.
 ##-----------------------------------------------------------------------------
 module "resource_group" {
-  source      = "terraform-az-modules/resource-group/azure"
-  version     = "1.0.1"
+  source      = "terraform-az-modules/resource-group/azurerm"
+  version     = "1.0.3"
   name        = "core"
   environment = "dev"
   location    = "centralus"
@@ -23,8 +23,8 @@ module "resource_group" {
 # Virtual Network
 # ------------------------------------------------------------------------------
 module "vnet" {
-  source              = "terraform-az-modules/vnet/azure"
-  version             = "1.0.0"
+  source              = "terraform-az-modules/vnet/azurerm"
+  version             = "1.0.3"
   name                = "core"
   environment         = "dev"
   label_order         = ["name", "environment", "location"]
@@ -37,8 +37,8 @@ module "vnet" {
 # Subnet
 # ------------------------------------------------------------------------------
 module "pub_subnet" {
-  source               = "terraform-az-modules/subnet/azure"
-  version              = "1.0.0"
+  source               = "terraform-az-modules/subnet/azurerm"
+  version              = "1.0.1"
   environment          = "dev"
   label_order          = ["name", "environment", "location"]
   resource_group_name  = module.resource_group.resource_group_name
@@ -70,8 +70,8 @@ module "pub_subnet" {
 # Subnet
 # ------------------------------------------------------------------------------
 module "pvt_subnet" {
-  source               = "terraform-az-modules/subnet/azure"
-  version              = "1.0.0"
+  source               = "terraform-az-modules/subnet/azurerm"
+  version              = "1.0.1"
   environment          = "dev"
   label_order          = ["name", "environment", "location"]
   resource_group_name  = module.resource_group.resource_group_name
@@ -103,8 +103,8 @@ module "pvt_subnet" {
 # Network Security Group
 #-----------------------------------------------------------------------------
 module "public_security_group" {
-  source              = "terraform-az-modules/nsg/azure"
-  version             = "1.0.0"
+  source              = "terraform-az-modules/nsg/azurerm"
+  version             = "1.0.1"
   name                = "pub"
   environment         = "dev"
   label_order         = ["name", "environment", "location"]
@@ -116,8 +116,8 @@ module "public_security_group" {
 # Network Security Group
 #-----------------------------------------------------------------------------
 module "private_security_group" {
-  source              = "terraform-az-modules/nsg/azure"
-  version             = "1.0.0"
+  source              = "terraform-az-modules/nsg/azurerm"
+  version             = "1.0.1"
   name                = "private"
   environment         = "dev"
   label_order         = ["name", "environment", "location"]
