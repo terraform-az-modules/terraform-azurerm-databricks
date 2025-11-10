@@ -13,4 +13,3 @@ jobs:
       tfchecks_azure: '["pr-validation / 📝 Validate PR title", "pr-validation / 🧾 Validate Commit Messages", "tf-lint / tflint"]'
     secrets:
       GITHUB: ${{ secrets.GITHUB }}
-    
