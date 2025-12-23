@@ -104,7 +104,7 @@ module "pvt_subnet" {
 #-----------------------------------------------------------------------------
 module "public_security_group" {
   source              = "terraform-az-modules/nsg/azurerm"
-  version             = "1.0.1"
+  version             = "1.0.2"
   name                = "pub"
   environment         = "dev"
   label_order         = ["name", "environment", "location"]
@@ -117,7 +117,7 @@ module "public_security_group" {
 #-----------------------------------------------------------------------------
 module "private_security_group" {
   source              = "terraform-az-modules/nsg/azurerm"
-  version             = "1.0.1"
+  version             = "1.0.2"
   name                = "private"
   environment         = "dev"
   label_order         = ["name", "environment", "location"]
