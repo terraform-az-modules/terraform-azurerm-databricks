@@ -1,23 +1,12 @@
-##-----------------------------------------------------------------------------
-## Versions
-##-----------------------------------------------------------------------------
-# Terraform version
 terraform {
   required_version = ">= 1.10.0"
-}
 
-terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">=4.11.0"
-    }
-    databricks = {
-      source  = "databricks/databricks"
-      version = ">=1.9.2"
+      version = "# Terraform version"
     }
   }
-
   provider_meta "azurerm" {
     module_name = "terraform-az-modules/terraform-azurerm-databricks"
   }
