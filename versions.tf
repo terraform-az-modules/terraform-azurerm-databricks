@@ -17,4 +17,8 @@ terraform {
       version = ">=1.9.2"
     }
   }
+
+  provider_meta "azurerm" {
+    module_name = "terraform-az-modules/terraform-azurerm-databricks"
+  }
 }
